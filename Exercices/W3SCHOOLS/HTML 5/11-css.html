@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS</title>
+
+        <!-- Le CSS version internal, les propriétés sont entrées ici -->
+        <style>
+            body {background-color: powderblue;}
+            #h1Test1   {color: blue;}
+            #pTest1    {color: red;}
+
+            /* Quelques attributs. */
+            .h1TestC {
+                color: blue;
+                font-family: verdana;
+                font-size: 300%;
+            }
+            .pTestC {
+                color: red;
+                font-family: courier;
+                font-size: 160%;
+                border: 2px solid powderblue;
+                padding: 30px;
+                margin: 50px;
+            }
+        </style>
+
+        <!-- Le CSS version external est écrit sur un fichier à part. -->
+        <link rel="stylesheet" href="css/11-styles.css">
+    </head>
+
+    <body>
+        <!-- Le CSS version inline directement en tant qu'attribut de balise. -->
+        <h1 style="color:blue;">A Blue Heading</h1>
+        <p style="color:red;">A red paragraph.</p>
+
+        <!-- Le CSS version internal, donc à l'aide des balises styles dans le head. -->
+        <h1 id="h1Test1">This is a heading</h1>
+        <p id="pTest1">This is a paragraph.</p>
+
+        <!-- Le CSS version external est écrit sur un fichier à part. -->
+        <h1 id="h1Test2">This is a heading</h1>
+        <p id="pTest2">This is a paragraph.</p>
+
+        <!-- Quelques attributs (voir la  balise style) -->
+        <h1 class="h1TestC">This is a heading</h1>
+        <p class="pTestC">This is a paragraph.</p>
+    </body>
+</html>
