@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Images</title>
+
+        <style>
+          /* This style sets the width of all images to 100%: */
+          .testWidth {
+            width: 100%;
+          }
+        </style>
+    </head>
+
+    <body>
+      <h2>HTML Image</h2>
+      <img src="images/pic_trulli.jpg" alt="Trulli" width="500" height="333">
+      <img src="images/img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+      <img src="images/img_chania.jpg" alt="Flowers in Chania">
+
+      <p>If a browser cannot find the image, it will display the alternate text:</p>
+
+      <img src="wrongname.gif" alt="Flowers in Chania">
+
+      <h2>Width/Height Attributes or Style?</h2>
+
+      <p>The first image uses the width attribute (set to 128 pixels), but the style in the head section overrides it, and sets the width to 100%.</p>
+
+      <img class="testWidth" src="images/html5.gif" alt="HTML5 Icon" width="128" height="128">
+
+      <p>The second image uses the style attribute to set the width to 128 pixels, this will not be overridden by the style in the head section:</p>
+
+      <img class="testWidth" src="images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+    
+      <h2>Images on Another Server</h2>
+
+      <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com" style="width:104px;height:142px;">
+    
+      <h2>Animated Images</h2>
+
+      <p>HTML allows moving images:</p>
+
+      <img src="images/programming.gif" alt="Computer man" style="width:48px;height:48px;">
+    
+      <h2>Image as a Link</h2>
+
+      <p>The image is a link. You can click on it.</p>
+
+      <a href="default.asp">
+        <img src="images/smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+      </a>
+
+      <h2>Floating Images</h2>
+      <p><strong>Float the image to the right:</strong></p>
+
+      <p>
+      <img src="images/smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+      A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.
+      </p>
+
+      <p><strong>Float the image to the left:</strong></p>
+      <p>
+        <img src="images/smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+        A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.  
+      </p>
+
+      <h2>Image Maps</h2>
+      <p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about the topic:</p>
+
+      <img src="images/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+      <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+        <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+        <area shape="circle" coords="337,300,44" href="coffee.htm" onclick="myFunction()">
+      </map>
+
+      <script>
+        function myFunction() {
+          alert("You clicked the coffee cup!");
+        }
+      </script>
+    </body>
+</html>
