@@ -2,9 +2,18 @@
 <html lang="en-US">
     <head>
         <meta charset="utf-8">
-        <title>Images</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Images & Favicon</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
         <style>
+          body {
+            background-image: url('images/img_girl.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;
+          }
+
           /* This style sets the width of all images to 100%: */
           .testWidth {
             width: 100%;
@@ -80,5 +89,50 @@
           alert("You clicked the coffee cup!");
         }
       </script>
+
+      <h2>Background Image</h2>
+
+      <p>A background image for a p element:</p>
+
+      <p style="background-image: url('images/img_girl.jpg');">
+      You can specify background images<br>
+      for any visible HTML element.<br>
+      In this example, the background image<br>
+      is specified for a p element.<br>
+      By default, the background-image<br>
+      will repeat itself in the direction(s)<br>
+      where it is smaller than the element<br>
+      where it is specified. Try resizing the<br>
+      browser window to see how the<br>
+      background image behaves.
+      </p>
+
+      <h2>The picture Element</h2>
+
+      <picture>
+        <source media="(min-width: 650px)" srcset="images/img_food.jpg">
+        <source media="(min-width: 465px)" srcset="images/img_car.jpg">
+        <img src="images/img_girl.jpg" style="width:auto;">
+      </picture>
+
+      <p>Resize the browser to see different versions of the picture loading at different viewport sizes.
+      The browser looks for the first source element where the media query matches the user's current viewport width,
+      and fetches the image specified in the srcset attribute.</p>
+
+      <p>The img element is required as the last child tag of the picture declaration block.
+      The img element is used to provide backward compatibility for browsers that do not support the picture element, or if none of the source tags matched.
+      </p>
+
+      <h2>The picture Element</h2>
+
+      <picture>
+        <source srcset="images/img_avatar.png">
+        <source srcset="images/img_girl.jpg">
+        <img src="images/img_beatles.gif" alt="Beatles" style="width:auto;">
+      </picture>
+
+      <p>The picture element can be used when the image format is not supported by all devices.</p>
+
+      <p>The device will use the first image format it supports, and ignore the rest of the images.</p>
     </body>
 </html>
