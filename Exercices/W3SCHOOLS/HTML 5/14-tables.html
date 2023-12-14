@@ -7,28 +7,78 @@
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
         <style>
-          table {
+          #mainTable {
             font-family: arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
           }
           
-          td, th {
+          #mainTable td, #mainTable th {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
           }
           
-          tr:nth-child(even) {
+          #mainTable tr:nth-child(even) {
             background-color: #dddddd;
           }
+
+          /* Horizontal striped tables */
+          .hStripes {
+            border-collapse: collapse;
+            width: 100%;
+          }
+
+          .hStripes th, #stripedTable td {
+            text-align: left;
+            padding: 8px;
+          }
+
+          .hStripes tr:nth-child(even) {
+            background-color: rgba(150, 212, 212, 0.4);
+          }
+
+          /* Vertical striped tables */
+          .vStripes, .vStripes th, .vStripes td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          }
+
+          .vStripes th:nth-child(even), .vStripes td:nth-child(even) {
+            background-color: rgba(150, 212, 212, 0.4);
+          }
+
+          /* Table Dividers */
+          #tableDiv {
+            border-collapse: collapse;
+            width: 100%;
+          }
+
+          #tableDiv tr {
+            border-bottom: 1px solid #ddd;
+          }
+
+          /* Hover Table */
+
+          #thisHover {
+            border-collapse: collapse;
+            width: 100%;
+          }
+
+          #thisHover th, #thisHovertd {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #DDD;
+          }
+
+          .hoverTable tr:hover {background-color: #D6EEEE;}
         </style>
     </head>
 
     <body>
       <h2>HTML Table</h2>
 
-      <table>
+      <table id="mainTable">
         <caption>Test</caption>
         <tr>
           <th>Company</th>
@@ -64,6 +114,198 @@
           <td>Magazzini Alimentari Riuniti</td>
           <td>Giovanni Rovelli</td>
           <td>Italy</td>
+        </tr>
+      </table>
+
+      <h2>Zebra Striped Table</h2>
+      <p>For zebra-striped tables, use the nth-child() selector and add a background-color to all even (or odd) table rows:</p>
+
+      <table class="hStripes">
+        <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points</th>
+        </tr>
+        <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+        <td>$100</td>
+        </tr>
+        <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+        <td>$150</td>
+        </tr>
+        <tr>
+        <td>Joe</td>
+        <td>Swanson</td>
+        <td>$300</td>
+        </tr>
+        <tr>
+        <td>Cleveland</td>
+        <td>Brown</td>
+        <td>$250</td>
+        </tr>
+      </table>
+
+      <h3>Vertical Striped Table</h3>
+
+      <table class="vStripes" style="width:100%">
+        <tr>
+          <th>MON</th>
+          <th>TUE</th>
+          <th>WED</th>
+          <th>THU</th>
+          <th>FRI</th>
+          <th>SAT</th>
+          <th>SUN</th>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </table>
+
+      <h3>Both Striped Table</h3>
+      <table class="hStripes vStripes" style="width:100%">
+        <tr>
+          <th>MON</th>
+          <th>TUE</th>
+          <th>WED</th>
+          <th>THU</th>
+          <th>FRI</th>
+          <th>SAT</th>
+          <th>SUN</th>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </table>
+
+      <h2>Bordered Table Dividers</h2>
+      <p>Add the border-bottom property to the tr elements for horizontal dividers:</p>
+
+      <table id="tableDiv" class="hoverTable">
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+        <th>Savings</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>Lois</td>
+          <td>Griffin</td>
+          <td>$150</td>
+        </tr>
+        <tr>
+          <td>Joe</td>
+          <td>Swanson</td>
+          <td>$300</td>
+        </tr>
+        <tr>
+          <td>Cleveland</td>
+          <td>Brown</td>
+          <td>$250</td>
+        </tr>
+      </table>
+
+      <h2>Hoverable Table</h2>
+      <p>Move the mouse over the table rows to see the effect.</p>
+
+      <table id="thisHover" class="hoverTable">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Points</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>Lois</td>
+          <td>Griffin</td>
+          <td>$150</td>
+        </tr>
+        <tr>
+          <td>Joe</td>
+          <td>Swanson</td>
+          <td>$300</td>
+        </tr>
+        <tr>
+          <td>Cleveland</td>
+          <td>Brown</td>
+          <td>$250</td>
         </tr>
       </table>
     </body>
